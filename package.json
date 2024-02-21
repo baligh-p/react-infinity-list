@@ -1,5 +1,5 @@
 {
-  "name": "infinit_list",
+  "name": "react-infinity-list",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -12,6 +12,7 @@
   },
   "author": "",
   "license": "ISC",
+  "typings": "./",
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
