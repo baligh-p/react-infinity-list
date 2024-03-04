@@ -1,3 +1,3 @@
-import TestComponent from "./components/TestComponent.jsx";
 
-export { TestComponent }
+import List from "./components/List.jsx";
+export { List }
