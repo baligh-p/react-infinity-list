@@ -4,7 +4,7 @@ import React from 'react'
 /**
  * Recursive List Component
  * 
- * TODO: Remove the currentItemIndex
+ * TODO: Remove the currentItemIndex if not needed
  * 
  * @param {Object} props - Component props
  * @param {Array} data - Data to be displayed in the list
