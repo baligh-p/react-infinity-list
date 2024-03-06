@@ -1,11 +1,13 @@
+
+
 declare module 'react-infinity-list' {
     import * as React from 'react';
 
 
-    type ItemType = { [key: string | number]: any, subItems?: ItemType[] }
-    type ItemComponentProps = { data: ItemType, depth: number, pathIndex: string }
+    export type ItemType = { [key: string | number]: any, subItems?: ItemType[] }
+    export type ItemComponentProps = { data: ItemType, depth: number, pathIndex: string }
 
-    interface ListComponentProps {
+    export interface ListComponentProps {
         containerClassName?: string
         style?: React.CSSProperties
         data: ItemType[]
@@ -13,7 +15,6 @@ declare module 'react-infinity-list' {
     }
 
 
-    const List: React.FC<ListComponentProps>
-    export { List }
+    export const List: React.FC<ListComponentProps>
 
 }
