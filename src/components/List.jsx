@@ -1,27 +1,26 @@
 import React from 'react'
+import "./../index.css"
+import RecursiveList from './RecursiveList.jsx'
 
+/**
+ * List to display a list of items in a recursive manner
+ * 
+ * @param {Object} props - Component props
+ * @param {Array} data - Data to be displayed in the list
+ * @param {React.JSX.Element} ItemComponent - Component to be used for each item in the list
+ * @param {Object} style - Custom styles to be applied to the list container
+ * @param {string} className - Custom classes to be applied to the list container
+ * @returns {React.JSX.Element} - Rendered list component
+*/
 
-const List = ({ data, Component, key }) => {
+const List = React.memo(({ data, ItemComponent, containerClassName, style }) => {
     return (
-        <ul className='flex flex-col'>
-            {Array.isArray(data) && (data?.map((element, index) => {
-                return <React.Fragment key={key !== undefined ? `${key}_${index}` : index}>
-                    <li>{element.label}</li>
-                    {element.childrens?.map((subElement, subIndex) => {
-                        return <List key={subIndex} data={subElement} />
-                    })}
-                </React.Fragment>
-            }))}
-            {!Array.isArray(data) && (
-                <React.Fragment>
-                    <li>{data.label}</li>
-                    {data.childrens?.map((subElement, subIndex) => {
-                        return <List key={subIndex} data={subElement} />
-                    })}
-                </React.Fragment>
-            )}
-        </ul>
+        <RecursiveList data={data} ItemComponent={ItemComponent} containerClassName={containerClassName} style={style} />
     )
-}
+})
+
+
+
+
 
 export default List

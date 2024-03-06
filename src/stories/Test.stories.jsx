@@ -1,12 +1,21 @@
-import List from "../components/List";
 import React from "react";
+import List from "../components/List.jsx";
+
+const ItemComponent = ({ data, depth, pathIndex }) => {
+    return (
+        <li className="w-full rounded-md border border-indigo-200 text-white bg-indigo-400 py-1.5 px-3">
+            {`value => ${data.label} pathIndex => ${pathIndex} depth => ${depth}`}
+        </li>
+    )
+}
+
 export default {
     component: () => {
-        return <List data={
+        return <List containerClassName="flex flex-col w-52 bg-gray-100 gap-y-2" ItemComponent={ItemComponent} data={
             [
                 {
                     label: "Dev",
-                    childrens: [
+                    subItems: [
                         {
                             label: "oracle"
                         },
@@ -17,15 +26,18 @@ export default {
                 },
                 {
                     label: "AI",
-                    childrens: [
+                    subItems: [
                         {
                             label: "YOLO",
-                            childrens: [
+                            subItems: [
                                 {
                                     label: "yolo v1",
-                                    childrens: [
+                                    subItems: [
                                         {
                                             label: "yolo v1.2",
+                                            subItems: [{
+                                                label: "yolo v1.2.1"
+                                            }]
                                         }
                                     ]
                                 },
